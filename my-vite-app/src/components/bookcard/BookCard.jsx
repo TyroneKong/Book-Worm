@@ -1,5 +1,7 @@
 import React from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import Fab from "@mui/material/Fab";
 
 const BookCard = ({ books, addToFavourites }) => {
   return (
@@ -11,12 +13,14 @@ const BookCard = ({ books, addToFavourites }) => {
         />
       </a>
       <div className="book__button-container">
-        <FavoriteBorderOutlinedIcon
+        <Fab
           fontSize="small"
           className="book__button-favourite"
           onClick={() => addToFavourites(books)}
           variant="contained"
-        />
+        >
+          <FavoriteIcon />
+        </Fab>
       </div>
       <p>
         {books.volumeInfo.hasOwnProperty("publishedDate")

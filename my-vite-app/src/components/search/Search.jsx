@@ -18,19 +18,6 @@ const Search = (props) => {
         click to search
       </Button>
 
-      {/* <select
-        onChange={props.handleSort()}
-        defaultValue="Sort"
-        className="search__dropdown"
-      >
-        <option disabled value="Sort" className="search__dropdown-options">
-          Sort
-        </option>
-        <option className="search__dropdown-options">Newest</option>
-        <option className="search__dropdown-options">Oldest</option>
-        <option className="search__dropdown-options">Highest Rating</option>
-        <option className="search__dropdown-options">Lowest Rating</option>
-      </select> */}
       <InputLabel>Sort</InputLabel>
       <Select defaultValue="" onChange={props.handleSort()}>
         <MenuItem value="">
