@@ -17,7 +17,7 @@ const CurrentlyReadingCard = ({ data, displayBook, addtoReading }) => {
           onClick={() => addtoReading(data)}
           variant="contained"
         >
-          Read
+          finished
         </Button>
       </div>
     </div>

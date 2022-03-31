@@ -1,5 +1,8 @@
 import AutoStoriesOutlinedIcon from "@mui/icons-material/AutoStoriesOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Button from "@mui/material/Button";
+
 import "./FavouritesCard.scss";
 import Modal from "../modal/Modal";
 
@@ -21,17 +24,21 @@ const FavouriteCard = ({
         </button>
 
         <div className="favouritebook__button-container">
-          <AutoStoriesOutlinedIcon
-            fontSize="small"
+          <Button
             className="favouritebook__button--currentlyReading"
             onClick={addToCurrentlyReading}
             variant="contained"
-          />
-          <DeleteOutlineOutlinedIcon
-            fontSize="small"
+          >
+            reading
+          </Button>
+          <Button
+            variant="outlined"
             className="favouritebook__button--delete"
             onClick={removeFromFavourites}
-          />
+            startIcon={<DeleteIcon />}
+          >
+            Delete
+          </Button>
         </div>
       </div>
 
