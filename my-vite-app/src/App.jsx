@@ -5,7 +5,7 @@ import Favourites from "./Pages/Favourites";
 import Header from "./components/header/header";
 import Read from "./Pages/Read";
 import CurrentlyReading from "./Pages/CurrentlyReading";
-import Bookstore from "./Pages/Bookstore";
+import MapContainer from "./Pages/Map";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/favourites" component={Favourites} />
           <Route path="/read" component={Read} />
           <Route path="/currentlyReading" component={CurrentlyReading} />
-          <Route path="/bookstore" component={Bookstore} />
+          <Route path="/bookstore" component={MapContainer} />
         </Switch>
       </Router>
     </div>
