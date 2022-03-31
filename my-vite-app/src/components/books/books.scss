@@ -1,0 +1,58 @@
+.book {
+  border: 2px solid grey;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 50px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+
+    border: 2px solid grey;
+    column-gap: 20px;
+    row-gap: 10px;
+    border-radius: 12px;
+    // overflow: hidden;
+    overflow-y: scroll;
+  }
+  &__Image {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    transition: transform 0.4s ease;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  &__Image:hover {
+    transform: scale(1.2);
+  }
+  &__Image-container {
+    border: 2px solid grey;
+    background-color: bisque;
+    border-radius: 6px;
+  }
+  &__title {
+    font-size: 20px;
+    word-wrap: break-word;
+  }
+  &__title-container {
+    display: flex;
+    border: 2px solid grey;
+  }
+}
+
+.Main__title {
+  font-size: 80px;
+  font-family: Dancing Script;
+  color: peachpuff;
+}

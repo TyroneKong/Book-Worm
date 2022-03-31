@@ -1,0 +1,31 @@
+.search {
+  display: flex;
+
+  justify-content: center;
+  height: 40px;
+  column-gap: 10px;
+  &__input {
+    padding: 0px 40px;
+    border-radius: 6px;
+    background-color: bisque;
+  }
+  &__button {
+    padding: 0 10px;
+    border-radius: 6px;
+  }
+  &__dropdown {
+    width: 100px;
+    border-radius: 6px;
+  }
+}
+
+.nav {
+  &__logo-Image {
+    mix-blend-mode: multiply;
+    height: 40px;
+  }
+}
+
+#map {
+  height: 180px;
+}

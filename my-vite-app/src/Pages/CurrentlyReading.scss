@@ -1,0 +1,45 @@
+.currentbook {
+  &__button-container {
+    display: flex;
+  }
+  &__button--currently {
+    position: absolute;
+    bottom: 30px;
+  }
+  &__image-container {
+    border: 2px solid grey;
+    display: flex;
+    width: 120px;
+    height: 180px;
+    &:hover {
+      transform: scale(1.7);
+    }
+  }
+  &__image {
+    width: 150px;
+  }
+  &__main-heading {
+    font-size: 14px;
+  }
+  &__displayedbook-container {
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid grey;
+  }
+  &__displayedbook {
+    width: 400px;
+  }
+  &__displayedRecommendedbook {
+    width: 400px;
+  }
+}
+
+.Main__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  border: 2px solid grey;
+  padding: 20px 0px 20px 0px;
+}

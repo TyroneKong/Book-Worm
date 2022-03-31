@@ -1,0 +1,99 @@
+[
+  {
+    "id": "kLAoswEACAAJ",
+    "title": "Harry Potter and the Cursed Child",
+    "author": "J. K. Rowling, Jack Thorne, John Tiffany",
+    "image": "http://books.google.com/books/content?id=kLAoswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "previewlink": "http://books.google.co.uk/books?id=kLAoswEACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
+    "description": "The official playscript of the original West End production of Harry Potter and the Cursed Child. It was always difficult being Harry Potter and it isn't much easier now that he is an overworked employee of the Ministry of Magic, a husband, and father of three school-age children. While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places. The playscript for Harry Potter and the Cursed Child was originally released as a 'special rehearsal edition' alongside the opening of Jack Thorne's play in London's West End in summer 2016. Based on an original story by J.K. Rowling, John Tiffany and Jack Thorne, the play opened to rapturous reviews from theatregoers and critics alike, while the official playscript became an immediate global bestseller. This revised paperback edition updates the 'special rehearsal edition' with the conclusive and final dialogue from the play, which has subtly changed since its rehearsals, as well as a conversation piece between director John Tiffany and writer Jack Thorne, who share stories and insights about reading playscripts. This edition also includes useful background information including the Potter family tree and a timeline of events from the wizarding world prior to the beginning of Harry Potter and the Cursed Child.",
+    "category": ["Fiction"]
+  },
+  {
+    "id": "3ZnHBAAAQBAJ",
+    "title": "Harry Potter and the Chamber of Secrets",
+    "author": "J. K. Rowling",
+    "image": "http://books.google.com/books/content?id=3ZnHBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "When the Chamber of Secrets is opened again at the Hogswart School for Witchcraft and Wizardry, second-year student Harry Potter finds himself in danger from a dark power that has once more been released on the school.",
+    "category": ["Juvenile Fiction"]
+  },
+  {
+    "id": "p1v6DwAAQBAJ",
+    "title": "Eloquent JavaScript, 3rd Edition",
+    "author": "Marijn Haverbeke",
+    "image": "http://books.google.com/books/content?id=p1v6DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "Completely revised and updated, this best-selling introduction to programming in JavaScript focuses on writing real applications. JavaScript lies at the heart of almost every modern web application, from social apps like Twitter to browser-based game frameworks like Phaser and Babylon. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications. This much anticipated and thoroughly revised third edition of Eloquent JavaScript dives deep into the JavaScript language to show you how to write beautiful, effective code. It has been updated to reflect the current state of Java¬Script and web browsers and includes brand-new material on features like class notation, arrow functions, iterators, async functions, template strings, and block scope. A host of new exercises have also been added to test your skills and keep you on track. As with previous editions, Haverbeke continues to teach through extensive examples and immerses you in code from the start, while exercises and full-chapter projects give you hands-on experience with writing your own programs. You start by learning the basic structure of the JavaScript language as well as control structures, functions, and data structures to help you write basic programs. Then you'll learn about error handling and bug fixing, modularity, and asynchronous programming before moving on to web browsers and how JavaScript is used to program them. As you build projects such as an artificial life simulation, a simple programming language, and a paint program, you'll learn how to: - Understand the essential elements of programming, including syntax, control, and data - Organize and clarify your code with object-oriented and functional programming techniques - Script the browser and make basic web applications - Use the DOM effectively to interact with browsers - Harness Node.js to build servers and utilities Isn't it time you became fluent in the language of the Web? * All source code is available online in an inter¬active sandbox, where you can edit the code, run it, and see its output instantly.",
+    "category": ["Computers"]
+  },
+  {
+    "id": "N6DeDQAAQBAJ",
+    "title": "Harry Potter and the Deathly Hallows",
+    "author": "J. K. Rowling",
+    "image": "http://books.google.com/books/content?id=N6DeDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "Harry Potter is preparing to leave the Dursleys and Privet Drive for the last time. But the future that awaits him is full of danger, not only for him, but for anyone close to him - and Harry has already lost so much. Only by destroying Voldemort's remaining Horcruxes can Harry free himself and overcome the Dark Lord's forces of evil. In this dramatic conclusion to the Harry Potter series, Harry must leave his most loyal friends behind, and in a final perilous journey find the strength and the will to face his terrifying destiny: a deadly confrontation that is his alone to fight. These adult editions with glorious jacket art by Andrew Davidson are now available in hardback for the first time.",
+    "category": ["Boarding schools"]
+  },
+  {
+    "id": "DD7djwEACAAJ",
+    "title": "The Art of Castle in the Sky",
+    "author": "Hayao Miyazaki",
+    "image": "http://books.google.com/books/content?id=DD7djwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "description": "The definitive examination of the art and animation of Studio Ghibli’s masterpiece of fantasy and flight, Castle in the Sky! The latest in the perennially popular line of Studio Ghibli art books, which includes interviews, concept sketches, and finished animation cels from classics such as Spirited Away and My Neighbor Totoro. Hayao Miyazaki’s Castle in the Sky was the first feature film produced by the legendary Studio Ghibli. Sheeta, a girl who has the power to defy gravity, is on the run from pirates when she meets the young inventor Pazu. Together they explore the secrets of Laputa, a flying city constructed by a long-lost race of people. All of Miyazaki’s major themes—the power of flight, the bravery of young women, and a world wrecked by change—are captured with beautiful animation and joyous storytelling.",
+    "category": ["Performing Arts"]
+  },
+  {
+    "id": "BTMknk-qvacC",
+    "title": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "image": "http://books.google.com/books/content?id=BTMknk-qvacC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "Journalist Walls grew up with parents whose ideals and stubborn nonconformity were their curse and their salvation. Rex and Rose Mary and their four children lived like nomads, moving among Southwest desert towns, camping in the mountains. Rex was a charismatic, brilliant man who, when sober, captured his children's imagination, teaching them how to embrace life fearlessly. Rose Mary painted and wrote and couldn't stand the responsibility of providing for her family. When the money ran out, the Walls retreated to the dismal West Virginia mining town Rex had tried to escape. As the dysfunction escalated, the children had to fend for themselves, supporting one another as they found the resources and will to leave home. Yet Walls describes her parents with deep affection in this tale of unconditional love in a family that, despite its profound flaws, gave her the fiery determination to carve out a successful life. -- From publisher description.",
+    "category": ["Biography & Autobiography"]
+  },
+  {
+    "id": "Y0HbmAEACAAJ",
+    "title": "Harry Potter and the Order of the Phoenix",
+    "author": "J. K. Rowling",
+    "image": "http://books.google.com/books/content?id=Y0HbmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "description": "As Harry faces his upcoming fifth year at Hogwarts Academy, there are increasing rumors of dark times coming and of Lord Voldemort's return to power, and a secret anti-Voldemort society, The Order of the Phoenix, begins meeting again.",
+    "category": ["Juvenile Fiction"]
+  },
+  {
+    "id": "OHclhBVv-X4C",
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "image": "http://books.google.com/books/content?id=OHclhBVv-X4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "description": "From #1 New York Times bestselling author Brandon Sanderson, The Way of Kings, Book One of the Stormlight Archive begins an incredible new saga of epic proportion. Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike. Animals hide in shells, trees pull in branches, and grass retracts into the soilless ground. Cities are built only where the topography offers shelter. It has been centuries since the fall of the ten consecrated orders known as the Knights Radiant, but their Shardblades and Shardplate remain: mystical swords and suits of armor that transform ordinary men into near-invincible warriors. Men trade kingdoms for Shardblades. Wars were fought for them, and won by them. One such war rages on a ruined landscape called the Shattered Plains. There, Kaladin, who traded his medical apprenticeship for a spear to protect his little brother, has been reduced to slavery. In a war that makes no sense, where ten armies fight separately against a single foe, he struggles to save his men and to fathom the leaders who consider them expendable. Brightlord Dalinar Kholin commands one of those other armies. Like his brother, the late king, he is fascinated by an ancient text called The Way of Kings. Troubled by over-powering visions of ancient times and the Knights Radiant, he has begun to doubt his own sanity. Across the ocean, an untried young woman named Shallan seeks to train under an eminent scholar and notorious heretic, Dalinar's niece, Jasnah. Though she genuinely loves learning, Shallan's motives are less than pure. As she plans a daring theft, her research for Jasnah hints at secrets of the Knights Radiant and the true cause of the war. The result of over ten years of planning, writing, and world-building, The Way of Kings is but the opening movement of the Stormlight Archive, a bold masterpiece in the making. Speak again the ancient oaths: Life before death. Strength before weakness. Journey before Destination. and return to men the Shards they once bore. The Knights Radiant must stand again. Other Tor books by Brandon Sanderson The Cosmere The Stormlight Archive The Way of Kings Words of Radiance Edgedancer (Novella) Oathbringer The Mistborn trilogy Mistborn: The Final Empire The Well of Ascension The Hero of Ages Mistborn: The Wax and Wayne series Alloy of Law Shadows of Self Bands of Mourning Collection Arcanum Unbounded Other Cosmere novels Elantris Warbreaker The Alcatraz vs. the Evil Librarians series Alcatraz vs. the Evil Librarians The Scrivener's Bones The Knights of Crystallia The Shattered Lens The Dark Talent The Rithmatist series The Rithmatist Other books by Brandon Sanderson The Reckoners Steelheart Firefight Calamity At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.",
+    "category": ["Fiction"]
+  },
+  {
+    "id": "S3QJGM58BacC",
+    "title": "The Crimson Campaign",
+    "author": "Brian McClellan",
+    "image": "http://books.google.com/books/content?id=S3QJGM58BacC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "'Just plain awesome . . . Innovative magic, quick-paced plot, interesting world. I had a blast' Brandon Sanderson on Promise of Blood Field Marshal Tamas's invasion of Kez has ended in disaster. Stranded behind enemy lines and hounded by the enemy's finest, Tamas must lead his remaining men on a reckless retreat through northern Kez to safety. In Adro, Inspector Adamat wants only to rescue his wife. To do so, he must hunt down and confront the enigmatic Lord Vetus - but the truth he learns is far darker than he could have imagined. The god Kremsimir wants the head of Tamas's son, Taniel - the man who shot him in the eye. With Tamas and his powder mages presumed dead, only Taniel can lead the charge against the vengeful god and his invading army. Praise for the series: 'Gunpowder and magic. An explosive combination' Peter Brett 'Brings a welcome breath of gunpowder-tinged air to epic fantasy' Anthony Ryan 'Tense action, memorable characters, rising stakes . . . Brian McClellan is the real thing' Brent Weeks The Powder Mage trilogy: Promise of Blood The Crimson Campaign The Autumn Republic The Gods of Blood and Powder series: Sins of Empire Wrath of Empire",
+    "category": ["Fiction"]
+  },
+  {
+    "id": "V5s14nks9I8C",
+    "title": "Jurassic Park",
+    "author": "Michael Crichton",
+    "image": "http://books.google.com/books/content?id=V5s14nks9I8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "#1 NEW YORK TIMES BESTSELLER • From the author of Timeline, Sphere, and Congo, this is the classic thriller of science run amok that took the world by storm. Nominated as one of America’s best-loved novels by PBS’s The Great American Read “[Michael] Crichton’s dinosaurs are genuinely frightening.”—Chicago Sun-Times An astonishing technique for recovering and cloning dinosaur DNA has been discovered. Now humankind’s most thrilling fantasies have come true. Creatures extinct for eons roam Jurassic Park with their awesome presence and profound mystery, and all the world can visit them—for a price. Until something goes wrong. . . . In Jurassic Park, Michael Crichton taps all his mesmerizing talent and scientific brilliance to create his most electrifying technothriller. Praise for Jurassic Park “Wonderful . . . powerful.”—The Washington Post Book World “Frighteningly real . . . compelling . . . It’ll keep you riveted.”—The Detroit News “Full of suspense.”—The New York Times Book Review",
+    "category": ["Fiction"]
+  },
+  {
+    "id": "6Rzdzs2hkZAC",
+    "title": "Michael Crichton's Jurassic World",
+    "author": "Michael Crichton",
+    "image": "http://books.google.com/books/content?id=6Rzdzs2hkZAC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "description": "The author's sagas of science run amok and a prehistoric, dinosaur-dominated world are presented in an omnibus edition containing \"Jurassic Park\" and \"The Lost World\"",
+    "category": ["Fiction"]
+  },
+  {
+    "id": "8WXnDQAAQBAJ",
+    "title": "The Cursed Lands (epic fantasy/sword and sorcery)",
+    "author": "Timothy L. Cerepaka",
+    "image": "http://books.google.com/books/content?id=8WXnDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "Long ago, the Dragon Gods founded the land of Yores. They drove out the monsters which lived within it and gave the land to their followers, who thanked the Dragon Gods and pledged to worship them for eternity. As time went on, however, the Yoresians grew proud and ceased worshipping the Dragon Gods, trusting instead in their magic. Thus, the Dragon Gods abandoned the Yoresians, which has turned out to be a mistake, for now the land of Yores is under attack from a powerful evil and the Yoresians cannot stand against it. Twin siblings Sarzen and Helnia, a warrior and a mage, set out to find the Dragon Gods, who they believe are their people's only hope of survival. But the quest ahead of them is fraught with dangers they can't even imagine, including a revelation about themselves that will shake their view of themselves and their leaders forever. KEYWORDS: epic fantasy adventure series, epic fantasy dragons, epic fantasy magic, epic fantasy sword and sorcery, sword and sorcery adult fantasy, sword and sorcery series, sword and sorcery series magic",
+    "category": ["Fiction"]
+  }
+]

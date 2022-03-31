@@ -1,0 +1,67 @@
+@import "../../abstracts/partials/mixins.scss";
+
+.favouritebook {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  column-gap: 200px;
+  height: 100%;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__image {
+    height: 200px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__info {
+    text-align: center;
+    column-gap: 20px;
+  }
+  &__description {
+    margin-top: 20px;
+    display: flex;
+    font-size: 13px;
+    flex-direction: column;
+    row-gap: 10px;
+    line-height: 20px;
+    width: 100%;
+    color: black;
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+  &__button-container {
+    display: flex;
+    column-gap: 30px;
+  }
+  &__button--currentlyReading {
+    cursor: pointer;
+  }
+  &__bookshelves {
+    border: 2px solid grey;
+    height: 200px;
+  }
+  &__button--delete {
+    color: red;
+    cursor: pointer;
+  }
+  &__title {
+    font-size: 0.875rem;
+    display: flex;
+  }
+}

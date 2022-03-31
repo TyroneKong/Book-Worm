@@ -1,0 +1,39 @@
+/* reset */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+  background-color: beige;
+
+  /* background-image: url("https://images.wallpaperscraft.com/image/single/books_library_shelves_138556_3840x2160.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  column-gap: 50px;
+  list-style: none;
+}
+
+.nav__logo {
+  width: 200px;
+  border-radius: 12px;
+}
