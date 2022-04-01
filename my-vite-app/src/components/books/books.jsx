@@ -143,7 +143,6 @@ const Book = () => {
     <div className="book">
       <div className="book__title-container">
         <h1 className="Main__title">Book Worm</h1>
-        <img className="book__bookWormImage" src={bookWorm}></img>
       </div>
       <Search handleSort={() => handleSort} handleSubmit={() => handleSubmit} />
       <div className="book__container">

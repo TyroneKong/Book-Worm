@@ -18,7 +18,7 @@ const Header = () => {
                 <Link to="/currentlyReading">Reading now</Link>
               </li>
               <li>
-                <Link to="/read">Finished Reading</Link>
+                <Link to="/read">Books I have read</Link>
               </li>
               <li>
                 <Link to="/bookstore">BookStore</Link>

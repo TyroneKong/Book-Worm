@@ -29,6 +29,7 @@ const Favourites = () => {
     });
   };
 
+  // add to currently reading list
   const addToCurrentlyReading = (data) => {
     console.log(data);
     const bookInfo = {
@@ -62,6 +63,7 @@ const Favourites = () => {
     });
   };
 
+  // delete from favourites
   const removeFromFavourites = (data) => {
     const ok = confirm("Are you sure you want to delete from favourites?");
     if (!ok) {
@@ -84,7 +86,6 @@ const Favourites = () => {
         <h1>Here is a list of your favourite books</h1>
       </div>
       <p>You have {allData.length} books in your list</p>
-      <p>Title</p>
 
       {allData.map((item, index) => {
         return (

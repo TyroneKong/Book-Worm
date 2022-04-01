@@ -2,6 +2,7 @@ import React from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Fab from "@mui/material/Fab";
+import Rating from "@mui/material/Rating";
 
 const BookCard = ({ books, addToFavourites }) => {
   return (
@@ -27,12 +28,13 @@ const BookCard = ({ books, addToFavourites }) => {
           ? parseInt(books.volumeInfo.publishedDate)
           : "No date avaiable"}
       </p>
-      <p>
-        rating:
-        {books.volumeInfo.hasOwnProperty("averageRating")
-          ? books.volumeInfo.averageRating
-          : "No rating available"}
-      </p>
+      <Rating
+        value={
+          books.volumeInfo.hasOwnProperty("averageRating")
+            ? books.volumeInfo.averageRating
+            : "No rating available"
+        }
+      ></Rating>
     </div>
   );
 };

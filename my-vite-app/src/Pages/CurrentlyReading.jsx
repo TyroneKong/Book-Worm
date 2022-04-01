@@ -11,11 +11,15 @@ const CurrentlyReading = () => {
   const [recommended, setRecommended] = useState("");
 
   useEffect(() => {
+    getAllBooks();
+  }, []);
+
+  const getAllBooks = () => {
     axios.get("http://localhost:5150/currentlyReading").then((response) => {
       setData(response.data);
       setDisplayedBook(response.data[0].image);
     });
-  }, []);
+  };
 
   //set the main book
   const displayBook = (item) => {
@@ -39,6 +43,7 @@ const CurrentlyReading = () => {
       });
   };
 
+  // add to finished reading list
   const addToFinishedReading = (data) => {
     const bookInfo = {
       id: data.id,
@@ -63,8 +68,28 @@ const CurrentlyReading = () => {
           .then((response) => {
             console.log(response.data);
           });
+        deletefromCurrentlyReading(data);
       }
     });
+  };
+
+  // delete from currently reading list
+  const deletefromCurrentlyReading = (data) => {
+    const ok = confirm(
+      "I hope you enjoyed the book, this has now been added to you books read list"
+    );
+    if (!ok) {
+      return null;
+    } else {
+      axios
+        .delete(`http://localhost:5150/deleteFromCurrentlyReading/${data.id}`)
+        .then((response) => {
+          getAllBooks();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (

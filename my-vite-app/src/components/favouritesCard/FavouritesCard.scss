@@ -1,11 +1,10 @@
 @import "../../abstracts/partials/mixins.scss";
 
 .favouritebook {
-  margin-left: 20px;
+  border: 2px solid grey;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
-
-  column-gap: 200px;
   height: 100%;
   @include tablet {
     display: flex;
@@ -13,6 +12,7 @@
   }
 
   &__container {
+    border: 2px solid grey;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +57,6 @@
     height: 200px;
   }
   &__button--delete {
-    color: red;
     cursor: pointer;
   }
   &__title {
