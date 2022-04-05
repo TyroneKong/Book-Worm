@@ -4,13 +4,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "@mui/material/Button";
 
 import "./FavouritesCard.scss";
-import Modal from "../modal/Modal";
 
 const FavouriteCard = ({
   item,
   addToCurrentlyReading,
   removeFromFavourites,
-  showModal,
 }) => {
   return (
     <div className="favouritebook">
@@ -19,9 +17,6 @@ const FavouriteCard = ({
         <a href={item.previewlink}>
           <img className="favouritebook__image" src={item.image} />
         </a>
-        <button type="button" onClick={showModal}>
-          more details
-        </button>
 
         <div className="favouritebook__button-container">
           <Button

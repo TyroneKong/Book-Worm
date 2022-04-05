@@ -37,6 +37,7 @@ const Favourites = () => {
       title: data.title,
       author: data.author,
       image: data.image,
+      previewlink: data.previewLink,
       description: data.description
         ? data.description
         : console.log("No description found"),
@@ -52,13 +53,13 @@ const Favourites = () => {
       if (allIDs.includes(data.id)) {
         alert("You have already added this book in your list");
       } else {
-        alert("You have now added this book to currently reading");
         axios
           .post(`http://localhost:5150/currentlyReading`, bookInfo)
           .then((response) => {})
           .catch((err) => {
             console.log(err);
           });
+        alert("You have now added this book to currently reading");
       }
     });
   };
@@ -70,7 +71,7 @@ const Favourites = () => {
       return null;
     } else {
       axios
-        .delete(`http://localhost:5150/delete-from-favourites/${data.id}`)
+        .delete(`http://localhost:5150/delete-from-favourites/${data._id}`)
         .then((response) => {
           fetchData();
         })
@@ -84,8 +85,8 @@ const Favourites = () => {
     <div>
       <div className="favouritebook__title">
         <h1>Here is a list of your favourite books</h1>
+        <h2>You have {allData.length} books in your list</h2>
       </div>
-      <p>You have {allData.length} books in your list</p>
 
       {allData.map((item, index) => {
         return (

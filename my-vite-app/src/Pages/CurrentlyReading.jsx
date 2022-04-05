@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./CurrentlyReading.scss";
-import CurrentlyReadingCard from "../components/currentlyReadingCard/currentlyReadingCard";
+import CurrentlyReadingCard from "../components/currentlyReadingCard/CurrentlyReadingCard";
 import RecommendedCard from "../components/recommendedCard/RecommendedCard";
 
 const CurrentlyReading = () => {
@@ -17,7 +17,7 @@ const CurrentlyReading = () => {
   const getAllBooks = () => {
     axios.get("http://localhost:5150/currentlyReading").then((response) => {
       setData(response.data);
-      setDisplayedBook(response.data[0].image);
+      setDisplayedBook(response.data[0]?.image);
     });
   };
 
@@ -25,13 +25,13 @@ const CurrentlyReading = () => {
   const displayBook = (item) => {
     setDisplayedBook(item.image);
     setDescription(item.description);
-    recommend(item.author);
+    recommend(item.category[0], item.author);
   };
 
   //recommend books based on author of main book
-  const recommend = (author, title) => {
+  const recommend = (category, author) => {
     axios
-      .get(`http://localhost:5150/recommended/${author}`)
+      .get(`http://localhost:5150/recommended/${category}/${author}`)
       .then((response) => {
         const randomBook = Math.floor(
           Math.random() * response.data.items.length
@@ -50,6 +50,7 @@ const CurrentlyReading = () => {
       title: data.title,
       author: data.author,
       image: data.image,
+      previewLink: data.previewlink,
       description: data.description
         ? data.description
         : console.log("No description found"),
@@ -82,7 +83,7 @@ const CurrentlyReading = () => {
       return null;
     } else {
       axios
-        .delete(`http://localhost:5150/deleteFromCurrentlyReading/${data.id}`)
+        .delete(`http://localhost:5150/deleteFromCurrentlyReading/${data._id}`)
         .then((response) => {
           getAllBooks();
         })
@@ -96,8 +97,9 @@ const CurrentlyReading = () => {
     <div>
       <div className="currentbook__main-heading">
         <h1>Here are the books on your currently reading list</h1>
+        <h2>There are {data.length} books in your list</h2>
       </div>
-      <p>There are {data.length} books in your list</p>
+
       <div className="Main__container">
         {data.map((item, index) => {
           return (

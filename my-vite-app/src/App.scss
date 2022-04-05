@@ -14,32 +14,29 @@ body {
 
   background-color: beige;
 
-  /* background-image: url("https://images.wallpaperscraft.com/image/single/books_library_shelves_138556_3840x2160.jpg"); */
-  background-size: cover;
-  background-repeat: no-repeat;
+  //   background-image: url("https://images.wallpaperscraft.com/image/single/books_library_shelves_138556_3840x2160.jpg");
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
   flex-direction: row-reverse;
-  padding: 10px;
+  padding: 0.625rem;
 }
 a {
-  color: black;
+  color: white;
   text-decoration: none;
-  &:hover {
-    color: white;
-  }
 }
 
 .nav__links {
   display: flex;
-  column-gap: 50px;
+  column-gap: 3.125rem;
   list-style: none;
 }
 
 .nav__logo {
-  width: 200px;
-  border-radius: 12px;
+  width: 12.5rem;
+  border-radius: 0.75rem;
 }

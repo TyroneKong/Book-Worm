@@ -1,57 +1,51 @@
 const express = require("express");
 const fs = require("fs");
 const router = express.Router();
+let Favourite = require("../models/favourites.model");
 
+//mongo
 const getFavourites = (req, res) => {
-  fs.readFile("./data/favourites.json", "utf-8", (err, data) => {
-    const favourites = JSON.parse(data);
-    if (!err) {
-      res.status(200).json(favourites);
-    } else {
-      console.log(err);
-    }
-  });
+  Favourite.find()
+    .then((favourite) => {
+      res.json(favourite);
+    })
+    .catch((err) => res.status(400).json(err));
 };
 
 //add to favourites
 
+//mongo
 const addToFavourites = (req, res) => {
-  const allData = JSON.parse(
-    fs.readFileSync("./data/favourites.json", "utf-8")
-  );
+  const id = req.body.id;
+  const title = req.body.title;
+  const author = req.body.author;
+  const image = req.body.image;
+  const previewLink = req.body.previewlink;
+  const description = req.body.description;
+  const category = req.body.category;
 
-  const bookInfo = {
-    id: req.body.id,
-    title: req.body.title,
-    author: req.body.author,
-    image: req.body.image,
-    previewlink: req.body.previewlink,
-    description: req.body.description,
-    category: req.body.category,
-  };
+  const newFavourite = new Favourite({
+    id,
+    title,
+    author,
+    image,
+    previewLink,
+    description,
+    category,
+  });
 
-  allData.push(bookInfo);
-  fs.writeFileSync(
-    "./data/favourites.json",
-    JSON.stringify(allData),
-    res.status(201).json({ status: "added to favourites", data: allData })
-  );
+  newFavourite
+    .save()
+    .then(() => res.json("favourite added successfully"))
+    .catch((err) => res.status(400).json(err));
 };
 
-//delete from favourites
 const deleteFromFavourites = (req, res) => {
-  const allData = JSON.parse(
-    fs.readFileSync("./data/favourites.json", "utf-8")
-  );
-
-  const foundBook = allData.filter((book) => book.id !== req.params.id);
-  console.log(foundBook);
-
-  fs.writeFileSync(
-    "./data/favourites.json",
-    JSON.stringify(foundBook),
-    res.status(204).json({ status: "removed from favourites", data: foundBook })
-  );
+  Favourite.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.json("Favourite deleted");
+    })
+    .catch((err) => res.status(400).json(err));
 };
 
 // get favourites

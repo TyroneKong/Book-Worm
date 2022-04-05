@@ -1,32 +1,63 @@
-const { response } = require("express");
 const express = require("express");
 const fs = require("fs");
 const router = express.Router();
+let Read = require("../models/Read.model");
 
-router.get("/read", (req, res) => {
-  fs.readFile("./data/read.json", "utf-8", (err, data) => {
-    const readData = JSON.parse(data);
-    res.json(readData);
+//mongo
+const getRead = (req, res) => {
+  Read.find()
+    .then((read) => {
+      res.json(read);
+    })
+    .catch((err) => res.status(400).json(err));
+};
+
+//add to favourites
+
+//mongo
+const addToRead = (req, res) => {
+  const id = req.body.id;
+  const title = req.body.title;
+  const author = req.body.author;
+  const image = req.body.image;
+  const previewLink = req.body.previewlink;
+  const description = req.body.description;
+  const category = req.body.category;
+
+  const newRead = new Read({
+    id,
+    title,
+    author,
+    image,
+    previewLink,
+    description,
+    category,
   });
-});
 
-router.post("/add-to-read", (req, res) => {
-  const readData = JSON.parse(fs.readFileSync("./data/read.json", "utf-8"));
+  newRead
+    .save()
+    .then(() => res.json("Read added successfully"))
+    .catch((err) => res.status(400).json(err));
+};
 
-  const bookInfo = {
-    id: req.body.id,
-    title: req.body.title,
-    author: req.body.author,
-    image: req.body.image,
-    description: req.body.description,
-    category: req.body.category,
-  };
-  readData.push(bookInfo);
-  fs.writeFileSync(
-    "./data/read.json",
-    JSON.stringify(readData),
-    res.json({ status: "Book added to read list", data: readData })
-  );
-});
+const deleteFromRead = (req, res) => {
+  Read.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.json("Read deleted");
+    })
+    .catch((err) => res.status(400).json(err));
+};
+
+// get favourites
+router.get("/read", getRead);
+
+//post favourites
+router.post("/add-to-read", addToRead);
+
+//delete from favourites
+
+router.delete("/delete-from-read/:id", deleteFromRead);
+
+module.exports = router;
 
 module.exports = router;

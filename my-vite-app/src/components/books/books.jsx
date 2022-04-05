@@ -28,6 +28,7 @@ const Book = () => {
         if (response.status === 200) {
           const foundBook = response.data.items.filter(
             (book) =>
+              book.volumeInfo.averageRating &&
               book.volumeInfo.imageLinks &&
               book.volumeInfo.description &&
               book.volumeInfo.publishedDate
@@ -45,7 +46,6 @@ const Book = () => {
 
   // add to favourite list
   const addToFavourites = (data) => {
-    console.log(data);
     const bookInfo = {
       id: data.id,
       title: data.volumeInfo.title,
@@ -61,11 +61,10 @@ const Book = () => {
         ? data.volumeInfo.categories
         : console.log("no categories available"),
     };
-
+    console.log(data);
     axios.get("http://localhost:5150/favourites").then((response) => {
       const allFavourites = response.data;
       const allIDs = allFavourites.map((book) => book.id);
-
       // check if book is already added to favourites
       if (allIDs.includes(data.id)) {
         alert("Book already added to favourites");

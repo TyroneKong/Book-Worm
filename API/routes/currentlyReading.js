@@ -1,42 +1,53 @@
 const express = require("express");
 const fs = require("fs");
 const router = express.Router();
+let CurrentlyReading = require("../models/currentlyReading.model");
 
+//get all data
 const getCurrentlyReading = (req, res) => {
-  fs.readFile("./data/currentlyReading.json", "utf-8", (err, data) => {
-    const currentlyReading = JSON.parse(data);
-    if (!err) {
-      res.status(200).json(currentlyReading);
-    } else {
-      console.log(err);
-    }
-  });
+  CurrentlyReading.find()
+    .then((book) => {
+      res.json(book);
+    })
+    .catch((err) => res.status(400).json(err));
 };
 
+//add to currently reading  list
 const addToCurrentlyReading = (req, res) => {
-  const allData = JSON.parse(
-    fs.readFileSync("./data/currentlyReading.json", "utf-8")
-  );
+  const id = req.body.id;
+  const title = req.body.title;
+  const author = req.body.author;
+  const image = req.body.image;
+  const previewLink = req.body.previewlink;
+  const description = req.body.description;
+  const category = req.body.category;
 
-  const bookInfo = {
-    id: req.body.id,
-    title: req.body.title,
-    author: req.body.author,
-    image: req.body.image,
-    description: req.body.description,
-    category: req.body.category,
-  };
+  const newCurrentlyReading = new CurrentlyReading({
+    id,
+    title,
+    author,
+    image,
+    previewLink,
+    description,
+    category,
+  });
 
-  allData.push(bookInfo);
-  fs.writeFileSync(
-    "./data/currentlyReading.json",
-    JSON.stringify(allData),
-    res.status(201).json({
-      status: "added to currentlyReading",
-      results: allData.length,
-      data: allData,
+  newCurrentlyReading
+    .save()
+    .then(() => res.json("sucessfully added to want to read"))
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+};
+
+//delete from currently reading list
+
+const deleteFromCurrentlyReading = (req, res) => {
+  CurrentlyReading.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.json("Book has been removed from currently reading list");
     })
-  );
+    .catch((err) => res.status(400).json(err));
 };
 
 // get currently reading
@@ -44,5 +55,8 @@ router.get("/currentlyReading", getCurrentlyReading);
 
 //post currently reading
 router.post("/currentlyReading", addToCurrentlyReading);
+
+//delete from currently reading
+router.delete("/deleteFromCurrentlyReading/:id", deleteFromCurrentlyReading);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 .book {
   &__button-container {
     display: flex;
-    column-gap: 10px;
+    column-gap: 0.625rem;
   }
   &__button-favourite {
     cursor: pointer;

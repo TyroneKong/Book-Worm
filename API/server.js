@@ -1,20 +1,45 @@
 const express = require("express");
 const app = express();
-const PORT = 5150;
+const PORT = 5160;
 const cors = require("cors");
 const booksRoute = require("./routes/books");
 const favouritesRoute = require("./routes/favourites");
 const readRoute = require("./routes/read");
 const currentReadingRoute = require("./routes/currentlyReading");
 const RecommendedRoute = require("./routes/recommended");
-
+const jwt = require("express-jwt");
+const jwks = require("jwks-rsa");
+const mongoose = require("mongoose");
 const morgan = require("morgan");
+require("dotenv").config();
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri);
+
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection successfull");
+});
 
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
-app.use((req, res, next) => {
+// const verifyjwt = jwt({
+//   secret: jwks.expressJwtSecret({
+//     cache: true,
+//     rateLimit: true,
+//     jwksRequestsPerMinute: 5,
+//     jwksUri: "https://dev-wc5t9i7f.eu.auth0.com/.well-known/jwks.json",
+//   }),
+//   audience: "bookworm",
+//   issuer: "https://dev-wc5t9i7f.eu.auth0.com/",
+//   algorithms: ["RS256"],
+// });
+
+// app.use(verifyjwt);
+
+app.use("/", (req, res, next) => {
   console.log("incoming request");
   next();
 });
@@ -31,8 +56,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  console.log("You have posted to favourites");
-  res.send("Thanks for posting to favourites");
+  console.log("You have posted");
+  res.send("Thanks for posting");
 });
 
 app.listen(PORT, (err) => {

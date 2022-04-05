@@ -10,7 +10,7 @@ const BookCard = ({ books, addToFavourites }) => {
 
   return (
     <div>
-      <a href={books.volumeInfo.previewLink}>
+      <a href={books.volumeInfo.previewLink} target>
         <img
           className="book__Image"
           src={books.volumeInfo.imageLinks.thumbnail}
@@ -28,18 +28,8 @@ const BookCard = ({ books, addToFavourites }) => {
           </Fab>
         )}
       </div>
-      <p>
-        {books.volumeInfo.hasOwnProperty("publishedDate")
-          ? parseInt(books.volumeInfo.publishedDate)
-          : "No date avaiable"}
-      </p>
-      <Rating
-        value={
-          books.volumeInfo.hasOwnProperty("averageRating")
-            ? books.volumeInfo.averageRating
-            : "No rating available"
-        }
-      ></Rating>
+      <p>{books.volumeInfo.publishedDate}</p>
+      <Rating value={books.volumeInfo.averageRating}></Rating>
     </div>
   );
 };
