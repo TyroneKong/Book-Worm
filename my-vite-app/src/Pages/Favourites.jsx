@@ -7,16 +7,6 @@ import FavouriteCard from "../components/favouritesCard/FavouritesCard";
 const Favourites = () => {
   const [allData, setData] = useState([]);
   const [numberofFavourites, setNumberofFavourites] = useState("");
-  const [show, setShow] = useState(false);
-
-  const showModal = () => {
-    setShow(true);
-  };
-
-  const hideModal = () => {
-    setShow(false);
-    console.log("test");
-  };
 
   useEffect(() => {
     fetchData();

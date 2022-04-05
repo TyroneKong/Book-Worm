@@ -10,7 +10,7 @@ const BookCard = ({ books, addToFavourites }) => {
 
   return (
     <div>
-      <a href={books.volumeInfo.previewLink} target>
+      <a href={books.volumeInfo.previewLink}>
         <img
           className="book__Image"
           src={books.volumeInfo.imageLinks.thumbnail}

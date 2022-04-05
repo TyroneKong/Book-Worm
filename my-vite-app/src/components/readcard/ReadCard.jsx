@@ -61,7 +61,7 @@ const ReadCard = ({
               <img className="readbook__modal-image" src={item.image}></img>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <p>{item.description}</p>
+              {item.description}
             </Typography>
             <div className="readbook__modal-buttons">
               <Button onClick={handleClose}>close</Button>
