@@ -84,6 +84,7 @@ const Book = () => {
 
   //add to read list
   const addToRead = (data) => {
+    console.log(data);
     const bookInfo = {
       id: data.id,
       title: data.volumeInfo.title,
