@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./CurrentlyReading.scss";
 import CurrentlyReadingCard from "../components/currentlyReadingCard/CurrentlyReadingCard";
-import RecommendedCard from "../components/recommendedCard/RecommendedCard";
 import Bestseller from "../components/bestseller/Bestseller";
 
 const CurrentlyReading = () => {
