@@ -15,17 +15,18 @@ const Favourites = () => {
   const fetchData = () => {
     axios.get("http://localhost:5150/favourites").then((response) => {
       setData(response.data);
+
       setNumberofFavourites(response.data.length);
     });
   };
 
   // add to currently reading list
   const addToCurrentlyReading = (data) => {
-    console.log(data);
     const bookInfo = {
       id: data.id,
       title: data.title,
       author: data.author,
+      rating: data.rating,
       image: data.image,
       previewlink: data.previewLink,
       description: data.description
@@ -75,7 +76,10 @@ const Favourites = () => {
     <div>
       <div className="favouritebook__title">
         <h1>Here is a list of your favourite books</h1>
-        <h2>You have {allData.length} books in your list</h2>
+        <h2>
+          You have {allData.length} {allData.length > 1 ? "books" : "book"} in
+          your list
+        </h2>
       </div>
 
       {allData.map((item, index) => {

@@ -1,6 +1,7 @@
 @import "../../abstracts/partials/mixins.scss";
 
 .readbook {
+  border: 2px solid grey;
   margin-left: 1.875rem;
   display: flex;
   height: 100%;
@@ -12,8 +13,7 @@
 
   &__container {
     border-radius: 0.75rem;
-    // box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
-
+    width: 46%;
     display: flex;
 
     align-items: center;
@@ -24,10 +24,11 @@
     }
   }
   &__image {
+    margin-top: 20px;
     border-radius: 0.75rem;
-    height: 6.25rem;
+    height: 8.25rem;
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.5);
     }
   }
   &__info {
@@ -35,11 +36,12 @@
     column-gap: 1.25rem;
   }
   &__description {
-    margin-top: 1.25rem;
+    column-gap: 26%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+
     font-size: 0.8125rem;
-    row-gap: 0.625rem;
+
     line-height: 1.25rem;
     width: 100%;
     color: black;
@@ -62,8 +64,9 @@
     cursor: pointer;
   }
   &__title {
-    border: 2px solid grey;
-    background-color: rgba(227, 195, 202, 0.6);
+    color: black;
+    // background-color: #4a75a1;
+
     font-size: 0.875rem;
     display: flex;
     flex-direction: column;
@@ -71,8 +74,7 @@
     align-items: center;
     row-gap: 1.25rem;
   }
-  &__modal {
-  }
+
   &__modal-image {
     height: 25rem;
   }
@@ -83,5 +85,33 @@
   &__image-container {
     display: flex;
     justify-content: center;
+  }
+  &__button-container {
+    display: flex;
+    align-items: center;
+  }
+  &__headings {
+    display: flex;
+  }
+  &__booktitle {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 25%;
+  }
+  &__author {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 25%;
+  }
+  &__rating {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 25%;
+  }
+  &__cover {
+    width: 400px;
   }
 }

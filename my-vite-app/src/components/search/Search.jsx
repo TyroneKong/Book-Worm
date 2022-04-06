@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import "./Search.scss";
 
 const Search = (props) => {
   return (

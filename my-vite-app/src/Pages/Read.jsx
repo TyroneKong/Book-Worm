@@ -86,7 +86,24 @@ const Reads = () => {
     <div>
       <div className="readbook__title">
         <h1>Here is a list of all books you have read</h1>
-        <h2>You have {allData.length} books in your list</h2>
+        <h2>
+          You have {allData.length} {allData.length > 1 ? "books" : "book"} in
+          your list
+        </h2>
+        {/* <div className="readbook__headings">
+          <div className="readbook__cover">
+            <h3>Cover</h3>
+          </div>
+          <div className="readbook__cover--title">
+            <h3>Title</h3>
+          </div>
+          <div className="readbook__cover--author">
+            <h3>Author</h3>
+          </div>
+          <div className="readbook__cover--rating">
+            <h3>Rating</h3>
+          </div>
+        </div> */}
       </div>
 
       {allData.map((item, index) => {

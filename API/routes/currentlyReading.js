@@ -17,8 +17,9 @@ const addToCurrentlyReading = (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const author = req.body.author;
+  const rating = req.body.rating;
   const image = req.body.image;
-  const previewLink = req.body.previewlink;
+  const previewLink = req.body.previewLink;
   const description = req.body.description;
   const category = req.body.category;
 
@@ -26,6 +27,7 @@ const addToCurrentlyReading = (req, res) => {
     id,
     title,
     author,
+    rating,
     image,
     previewLink,
     description,
@@ -37,6 +39,7 @@ const addToCurrentlyReading = (req, res) => {
     .then(() => res.json("sucessfully added to want to read"))
     .catch((err) => {
       res.status(400).json(err);
+      console.log(err);
     });
 };
 

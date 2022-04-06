@@ -5,6 +5,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Rating from "@mui/material/Rating";
 
 const style = {
   position: "absolute",
@@ -27,23 +28,13 @@ const ReadCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleClick = () => {
-    console.log(item);
-    return (
-      <>
-        <a href={item.previewLink} target></a>
-      </>
-    );
-  };
-
   return (
     <div className="readbook">
       <div className="readbook__container">
-        <div className="readbook__info"></div>
+        <div className="readbook__info">
+          <img className="readbook__image" src={item.image} />
+        </div>
 
-        <img className="readbook__image" src={item.image} />
-
-        <Button onClick={handleOpen}>More details</Button>
         <Modal
           className="readbook__modal"
           open={open}
@@ -65,28 +56,40 @@ const ReadCard = ({
             </Typography>
             <div className="readbook__modal-buttons">
               <Button onClick={handleClose}>close</Button>
-              <Button onClick={handleClick}>Preview</Button>
+              <Button>Preview</Button>
             </div>
           </Box>
         </Modal>
-
-        <div className="readbook__button-container">
-          <Button
-            variant="outlined"
-            className="readbook__button--delete"
-            onClick={removeFromReads}
-            startIcon={<DeleteIcon />}
-          >
-            Delete
-          </Button>
-        </div>
       </div>
 
       <div className="readbook__description">
-        <h3>Title</h3>
-        <p>{item.title}</p>
-        <h3>Author</h3>
-        <p>{item.author}</p>
+        <div className="readbook__booktitle">
+          <h3>Title</h3>
+          <p>{item.title}</p>
+        </div>
+        <div className="readbook__author">
+          <h3>Author</h3>
+          <p>{item.author}</p>
+        </div>
+        <div className="readbook__rating">
+          <div>
+            <h3>Rating</h3>
+          </div>
+          <Rating value={item.rating}></Rating>
+        </div>
+      </div>
+      <div className="readbook__button-container">
+        <Button
+          variant="contained"
+          className="readbook__button--delete"
+          onClick={removeFromReads}
+          startIcon={<DeleteIcon />}
+        >
+          Delete
+        </Button>
+      </div>
+      <div className="readbook__button-container">
+        <Button onClick={handleOpen}>More details</Button>
       </div>
     </div>
   );

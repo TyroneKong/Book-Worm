@@ -14,6 +14,9 @@ const ReadSchema = new Schema({
     type: String,
     unique: false,
   },
+  rating: {
+    type: Number,
+  },
   image: {
     type: String,
     unique: false,

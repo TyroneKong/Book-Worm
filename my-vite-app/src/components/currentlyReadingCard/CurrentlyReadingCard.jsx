@@ -1,7 +1,12 @@
 import Button from "@mui/material/Button";
 import "./CurrentlyReadingCard.scss";
 
-const CurrentlyReadingCard = ({ data, displayBook, addtoReading }) => {
+const CurrentlyReadingCard = ({
+  data,
+  displayBook,
+  addtoReading,
+  displayBookSimilar,
+}) => {
   return (
     <div>
       <div className="currentbook__image-container">

@@ -1,25 +1,9 @@
 .currentbook {
-  &__button-container {
-    display: flex;
-  }
-  &__button--currently {
-    position: absolute;
-    bottom: 1.875rem;
-  }
-  &__image-container {
-    display: flex;
-    width: 7.5rem;
-    height: 11.25rem;
-    &:hover {
-      transform: scale(1.7);
-    }
-  }
   &__image {
     width: 9.375rem;
     border-radius: 0.75rem;
   }
   &__main-heading {
-    background-color: rgba(227, 195, 202, 0.6);
     font-size: 0.875rem;
     font-size: 0.875rem;
     display: flex;
@@ -31,8 +15,6 @@
   &__displayedbook-container {
     display: flex;
     justify-content: space-between;
-
-    border: 2px solid grey;
   }
   &__displayedbook {
     text-align: center;
@@ -53,6 +35,12 @@
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 1.25rem;
-  border: 2px solid grey;
   padding: 1.25rem 0rem 1.25rem 0rem;
+}
+
+.bestseller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

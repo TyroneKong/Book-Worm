@@ -1,5 +1,6 @@
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { React, useState, useEffect } from "react";
+
 import {
   GoogleMap,
   LoadScript,
@@ -23,6 +24,7 @@ const MapContainer = () => {
   });
 
   const [selected, setSelected] = useState({});
+  const [markers, setMarkers] = useState([]);
 
   const onMarkerDragEnd = (e) => {
     const lat = e.latLng.lat();
@@ -84,6 +86,15 @@ const MapContainer = () => {
         mapContainerStyle={mapStyles}
         zoom={13}
         center={currentPosition}
+        onClick={(event) => {
+          setMarkers((current) => [
+            ...current,
+            {
+              lat: event.latLng.lat(),
+              lng: event.latLng.lng(),
+            },
+          ]);
+        }}
       >
         {locations.map((item) => {
           return <Marker key={item.name} position={item.location} />;
@@ -104,6 +115,10 @@ const MapContainer = () => {
             draggable={true}
           />
         ) : null}
+
+        {markers.map((marker, index) => (
+          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} />
+        ))}
       </GoogleMap>
     </LoadScript>
   );

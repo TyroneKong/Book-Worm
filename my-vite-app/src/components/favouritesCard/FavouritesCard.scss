@@ -1,20 +1,22 @@
 @import "../../abstracts/partials/mixins.scss";
 
 .favouritebook {
-  margin-left: 1.875rem;
-  display: flex;
-  height: 100%;
+  border-radius: 12px;
+  display: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
   column-gap: 1.25rem;
+  width: 100%;
   @include tablet {
     display: flex;
-    flex-direction: row;
   }
 
   &__container {
     border-radius: 0.75rem;
     // box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 
-    background-color: beige;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,15 +58,12 @@
     cursor: pointer;
   }
   &__bookshelves {
-    border: 2px solid grey;
     height: 12.5rem;
   }
   &__button--delete {
     cursor: pointer;
   }
   &__title {
-    border: 2px solid grey;
-    background-color: rgba(227, 195, 202, 0.6);
     font-size: 0.875rem;
     display: flex;
     justify-content: center;

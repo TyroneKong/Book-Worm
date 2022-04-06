@@ -16,6 +16,7 @@ const RecommendedCard = ({ displayedBookState, recommendedState }) => {
           <div>
             <h2 className="currentbook__displayedbook">Similar Books</h2>
           </div>
+
           <img
             className="currentbook__displayedRecommendedbook"
             src={recommendedState}

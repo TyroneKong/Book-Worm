@@ -1,0 +1,10 @@
+.bestseller {
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+  &__image {
+    width: 25rem;
+  }
+}

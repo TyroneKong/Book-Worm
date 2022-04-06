@@ -1,0 +1,17 @@
+.currentbook {
+  &__button-container {
+    display: flex;
+  }
+  &__button--currently {
+    position: absolute;
+    bottom: 1.875rem;
+  }
+  &__image-container {
+    display: flex;
+    width: 7.5rem;
+    height: 11.25rem;
+    &:hover {
+      transform: scale(1.7);
+    }
+  }
+}

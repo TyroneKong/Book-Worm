@@ -19,8 +19,9 @@ const addToRead = (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const author = req.body.author;
+  const rating = req.body.rating;
   const image = req.body.image;
-  const previewLink = req.body.previewlink;
+  const previewLink = req.body.previewLink;
   const description = req.body.description;
   const category = req.body.category;
 
@@ -28,6 +29,7 @@ const addToRead = (req, res) => {
     id,
     title,
     author,
+    rating,
     image,
     previewLink,
     description,

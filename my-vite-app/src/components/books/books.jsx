@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import BookList from "../bookList/BookList";
 import "./books.scss";
 import Search from "../search/Search";
-import bookWorm from "../../assets/images/bookworm3.jpeg";
 
 const Book = () => {
   //setting state
@@ -46,10 +45,12 @@ const Book = () => {
 
   // add to favourite list
   const addToFavourites = (data) => {
+    console.log(data);
     const bookInfo = {
       id: data.id,
       title: data.volumeInfo.title,
       author: data.volumeInfo.authors[0],
+      rating: data.volumeInfo.averageRating,
       image: data.volumeInfo.imageLinks.thumbnail,
       previewlink: data.volumeInfo.previewLink
         ? data.volumeInfo.previewLink
@@ -61,7 +62,7 @@ const Book = () => {
         ? data.volumeInfo.categories
         : console.log("no categories available"),
     };
-    console.log(data);
+    console.log(bookInfo);
     axios.get("http://localhost:5150/favourites").then((response) => {
       const allFavourites = response.data;
       const allIDs = allFavourites.map((book) => book.id);
@@ -89,6 +90,7 @@ const Book = () => {
       id: data.id,
       title: data.volumeInfo.title,
       author: data.volumInfo.authors.join(", "),
+      rating: data.volumeInfo.averageRating,
       image: data.volumeInfo.imageLinks.thumbnail,
       previewlink: data.volumeInfo.previewLink
         ? data.volumeInfo.previewLink
@@ -100,6 +102,7 @@ const Book = () => {
         ? data.volumeInfo.categories
         : console.log("no categories available"),
     };
+
     axios
       .post(`http://localhost:5150/add-to-read`, bookInfo)
       .then((response) => {

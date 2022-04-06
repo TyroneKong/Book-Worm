@@ -9,9 +9,12 @@ function Profile() {
   return (
     isAuthenticated && (
       <div className="profile__info">
-        <Avatar src={user.picture} alt={user.name}></Avatar>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <Avatar
+          sx={{ width: 56, height: 56 }}
+          src={user.picture}
+          alt={user.name}
+        ></Avatar>
+        <p>{user.name}</p>
       </div>
     )
   );

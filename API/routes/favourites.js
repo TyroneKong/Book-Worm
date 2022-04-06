@@ -19,6 +19,7 @@ const addToFavourites = (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const author = req.body.author;
+  const rating = req.body.rating;
   const image = req.body.image;
   const previewLink = req.body.previewlink;
   const description = req.body.description;
@@ -28,6 +29,7 @@ const addToFavourites = (req, res) => {
     id,
     title,
     author,
+    rating,
     image,
     previewLink,
     description,
@@ -37,7 +39,7 @@ const addToFavourites = (req, res) => {
   newFavourite
     .save()
     .then(() => res.json("favourite added successfully"))
-    .catch((err) => res.status(400).json(err));
+    .catch((err) => console.log(err));
 };
 
 const deleteFromFavourites = (req, res) => {

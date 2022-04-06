@@ -12,7 +12,9 @@ const favouriteSchema = new Schema({
   },
   author: {
     type: String,
-    unique: false,
+  },
+  rating: {
+    type: Number,
   },
   image: {
     type: String,

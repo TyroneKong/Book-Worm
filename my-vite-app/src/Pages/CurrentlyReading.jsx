@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import "./CurrentlyReading.scss";
 import CurrentlyReadingCard from "../components/currentlyReadingCard/CurrentlyReadingCard";
 import RecommendedCard from "../components/recommendedCard/RecommendedCard";
+import Bestseller from "../components/bestseller/Bestseller";
 
 const CurrentlyReading = () => {
   const [data, setData] = useState([]);
   const [displayedBook, setDisplayedBook] = useState("");
-  const [description, setDescription] = useState("");
-  const [recommended, setRecommended] = useState("");
+
+  const [bestseller, setBestseller] = useState([]);
 
   useEffect(() => {
     getAllBooks();
@@ -21,36 +22,27 @@ const CurrentlyReading = () => {
     });
   };
 
-  //set the main book
-  const displayBook = (item) => {
-    setDisplayedBook(item.image);
-    setDescription(item.description);
-    recommend(item.category[0], item.author);
-  };
+  const getNewYorkTimes = () => {
+    axios.get("http://localhost:5150/newYorkTimesBooks").then((response) => {
+      const book = response.data.results.books;
 
-  //recommend books based on author of main book
-  const recommend = (category, author) => {
-    axios
-      .get(`http://localhost:5150/recommended/${category}/${author}`)
-      .then((response) => {
-        const randomBook = Math.floor(
-          Math.random() * response.data.items.length
-        );
-
-        setRecommended(
-          response.data.items[randomBook]?.volumeInfo.imageLinks?.thumbnail
-        );
-      });
+      const bookImages = book.map((book) => book.book_image);
+      const randomImage =
+        bookImages[Math.floor(Math.random() * bookImages.length)];
+      setBestseller(randomImage);
+    });
   };
 
   // add to finished reading list
   const addToFinishedReading = (data) => {
+    console.log(data);
     const bookInfo = {
       id: data.id,
       title: data.title,
       author: data.author,
+      rating: data.rating,
       image: data.image,
-      previewLink: data.previewlink,
+      previewLink: data.previewLink,
       description: data.description
         ? data.description
         : console.log("No description found"),
@@ -58,7 +50,7 @@ const CurrentlyReading = () => {
         ? data.category
         : console.log("no categories available"),
     };
-
+    console.log(bookInfo);
     axios.get("http://localhost:5150/read").then((response) => {
       const allIDs = response.data.map((book) => book.id);
       if (allIDs.includes(data.id)) {
@@ -97,7 +89,10 @@ const CurrentlyReading = () => {
     <div>
       <div className="currentbook__main-heading">
         <h1>Here are the books on your currently reading list</h1>
-        <h2>There are {data.length} books in your list</h2>
+        <h2>
+          You have {data.length} {data.length > 1 ? "books" : "book"} in your
+          list
+        </h2>
       </div>
 
       <div className="Main__container">
@@ -113,10 +108,12 @@ const CurrentlyReading = () => {
           );
         })}
       </div>
-      <RecommendedCard
-        recommendedState={recommended}
-        displayedBookState={displayedBook}
-      />
+      <div className="bestseller">
+        <Bestseller
+          getNewYorkTimes={() => getNewYorkTimes()}
+          bestseller={bestseller}
+        />
+      </div>
     </div>
   );
 };

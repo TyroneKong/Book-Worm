@@ -14,4 +14,13 @@ router.get("/books/:title", (req, res) => {
     .then((response) => res.json(response.data));
 });
 
+//new york times books
+router.get("/newYorkTimesBooks", (req, res) => {
+  axios
+    .get(
+      "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=Jkv14CeU5FoGYxyTsqPjGfRoaomG7TEG"
+    )
+    .then((response) => res.json(response.data));
+});
+
 module.exports = router;
