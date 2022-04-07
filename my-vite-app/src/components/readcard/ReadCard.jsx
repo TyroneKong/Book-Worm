@@ -72,9 +72,8 @@ const ReadCard = ({
           <p>{item.author}</p>
         </div>
         <div className="readbook__rating">
-          <div>
-            <h3>Rating</h3>
-          </div>
+          <h3>Rating</h3>
+          <p>{item.rating}</p>
           <Rating value={item.rating}></Rating>
         </div>
       </div>
