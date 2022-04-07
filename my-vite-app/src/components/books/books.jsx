@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import BookList from "../bookList/BookList";
 import "./books.scss";
 import Search from "../search/Search";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 const Book = () => {
   //setting state
   const [allData, setAllData] = useState([]);
   const [id, setID] = useState("");
   const [sort, setSort] = useState("");
+  const [alertAlreadyadded, setAlertAlreadyAdded] = useState(false);
+  const [alertSuccess, setAlertSuccess] = useState(false);
 
   // function to search using user input
   const handleSubmit = (e) => {
@@ -68,9 +72,10 @@ const Book = () => {
       const allIDs = allFavourites.map((book) => book.id);
       // check if book is already added to favourites
       if (allIDs.includes(data.id)) {
-        alert("Book already added to favourites");
+        setAlertAlreadyAdded(true);
       } else {
-        alert("Book has now been added to favourites");
+        setAlertSuccess(true);
+        // alert("Book has now been added to favourites");
         axios
           .post(`http://localhost:5150/add-to-favourites`, bookInfo)
           .then((response) => {
@@ -145,6 +150,19 @@ const Book = () => {
       <div className="book__title-container">
         <h1 className="Main__title">Book Worm</h1>
       </div>
+
+      {alertAlreadyadded ? (
+        <Alert onClose={() => setAlertAlreadyAdded(false)} severity="error">
+          <AlertTitle>Error</AlertTitle>
+          Already added to favourites
+        </Alert>
+      ) : null}
+      {alertSuccess ? (
+        <Alert onClose={() => setAlertSuccess(false)} severity="success">
+          <AlertTitle>Success</AlertTitle>
+          Successfully added to favourites
+        </Alert>
+      ) : null}
       <Search handleSort={() => handleSort} handleSubmit={() => handleSubmit} />
       <div className="book__container">
         <BookList

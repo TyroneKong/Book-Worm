@@ -3,11 +3,14 @@ import axios from "axios";
 import "./Favourites.scss";
 
 import FavouriteCard from "../components/favouritesCard/FavouritesCard";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 const Favourites = () => {
   const [allData, setData] = useState([]);
   const [numberofFavourites, setNumberofFavourites] = useState("");
-
+  const [alertAlreadyadded, setAlertAlreadyAdded] = useState(false);
+  const [alertSuccess, setAlertSuccess] = useState(false);
   useEffect(() => {
     fetchData();
   }, []);
@@ -42,7 +45,7 @@ const Favourites = () => {
 
       //checks to see if book already exists in currently reading
       if (allIDs.includes(data.id)) {
-        alert("You have already added this book in your list");
+        setAlertAlreadyAdded(true);
       } else {
         axios
           .post(`http://localhost:5150/currentlyReading`, bookInfo)
@@ -50,7 +53,7 @@ const Favourites = () => {
           .catch((err) => {
             console.log(err);
           });
-        alert("You have now added this book to currently reading");
+        setAlertSuccess(true);
       }
     });
   };
@@ -74,6 +77,20 @@ const Favourites = () => {
 
   return (
     <div>
+      {window.scrollTo(0, 0)}
+      {alertAlreadyadded ? (
+        <Alert onClose={() => setAlertAlreadyAdded(false)} severity="error">
+          <AlertTitle>Error</AlertTitle>
+          Already added to currently reads
+        </Alert>
+      ) : null}
+      {window.scrollTo(0, 0)}
+      {alertSuccess ? (
+        <Alert onClose={() => setAlertSuccess(false)} severity="success">
+          <AlertTitle>Success</AlertTitle>
+          Successfully added to currently reads
+        </Alert>
+      ) : null}
       <div className="favouritebook__title">
         <h1>Here is a list of your favourite books</h1>
         <h2>
