@@ -2,7 +2,7 @@
 
 .readbook {
   border: 2px solid grey;
-  margin-left: 1.875rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
 
   &__container {
     border-radius: 0.75rem;
-    width: 46%;
+    width: 26%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,19 +105,19 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    width: 25%;
+    width: 20%;
   }
   &__author {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    width: 35%;
+    row-gap: 15px;
+    width: 20%;
   }
   &__rating {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
-    width: 50%;
+    width: 20%;
   }
   &__cover {
     width: 400px;
