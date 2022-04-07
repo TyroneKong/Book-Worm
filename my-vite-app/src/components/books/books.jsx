@@ -131,13 +131,11 @@ const Book = () => {
       );
     } else if (sort === "Highest Rating") {
       return (
-        parseInt(b.volumeInfo.averageRating) -
-        parseInt(a.volumeInfo.averageRating)
+        Number(b.volumeInfo.averageRating) - Number(a.volumeInfo.averageRating)
       );
     } else if (sort === "Lowest Rating") {
       return (
-        parseInt(a.volumeInfo.averageRating) -
-        parseInt(b.volumeInfo.averageRating)
+        Number(a.volumeInfo.averageRating) - Number(b.volumeInfo.averageRating)
       );
     }
   });
