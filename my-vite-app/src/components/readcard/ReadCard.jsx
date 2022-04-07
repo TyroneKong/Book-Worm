@@ -56,7 +56,6 @@ const ReadCard = ({
             </Typography>
             <div className="readbook__modal-buttons">
               <Button onClick={handleClose}>close</Button>
-              <Button>Preview</Button>
             </div>
           </Box>
         </Modal>
