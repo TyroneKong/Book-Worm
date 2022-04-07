@@ -25,20 +25,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
-// const verifyjwt = jwt({
-//   secret: jwks.expressJwtSecret({
-//     cache: true,
-//     rateLimit: true,
-//     jwksRequestsPerMinute: 5,
-//     jwksUri: "https://dev-wc5t9i7f.eu.auth0.com/.well-known/jwks.json",
-//   }),
-//   audience: "bookworm",
-//   issuer: "https://dev-wc5t9i7f.eu.auth0.com/",
-//   algorithms: ["RS256"],
-// });
-
-// app.use(verifyjwt);
-
 app.use("/", (req, res, next) => {
   console.log("incoming request");
   next();
