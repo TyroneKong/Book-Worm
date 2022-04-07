@@ -13,6 +13,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 require("dotenv").config();
 
+/*ATLAS_URI = mongodb+srv://tyrone:ydRdjzmP65JsnLua@cluster0.nputt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+DBPASSWORD = ydRdjzmP65JsnLua */
+
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
 
