@@ -10,22 +10,6 @@ const Header = () => {
   const [numOfReadNow, setNumOfReadNow] = useState([]);
   const [numOfRead, setNumOfRead] = useState([]);
 
-  // useEffect(() => {
-  //   getAllData();
-  // }, [numOfFav, numOfReadNow, numOfRead]);
-
-  // const getAllData = () => {
-  //   axios.get("http://localhost:5150/favourites").then((response) => {
-  //     setNumOfFav(response.data.length);
-  //   });
-  //   axios.get("http://localhost:5150/currentlyReading").then((response) => {
-  //     setNumOfReadNow(response.data.length);
-  //   });
-  //   axios.get("http://localhost:5150/read").then((response) => {
-  //     setNumOfRead(response.data.length);
-  //   });
-  // };
-
   return (
     isAuthenticated && (
       <>

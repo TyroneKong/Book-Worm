@@ -61,5 +61,3 @@ router.post("/add-to-read", addToRead);
 router.delete("/delete-from-read/:id", deleteFromRead);
 
 module.exports = router;
-
-module.exports = router;

@@ -44,3 +44,51 @@
   align-items: center;
   flex-direction: column;
 }
+
+.comment__section {
+  margin-left: 20px;
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+}
+
+.comment__card {
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: beige;
+  width: 25%;
+  height: 150px;
+  display: flex;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.comment__username {
+  height: 50px;
+  border-radius: 6px;
+}
+
+.comment__comment {
+  border-radius: 6px;
+  height: 100px;
+}
+
+.comment__card-container {
+  display: flex;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.comment__edit {
+  cursor: pointer;
+}
+
+.comment__delete {
+  cursor: pointer;
+}
+
+.comment__profilepic {
+  display: flex;
+}

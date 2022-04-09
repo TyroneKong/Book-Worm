@@ -7,6 +7,7 @@ const favouritesRoute = require("./routes/favourites");
 const readRoute = require("./routes/read");
 const currentReadingRoute = require("./routes/currentlyReading");
 const RecommendedRoute = require("./routes/recommended");
+const UserRoute = require("./routes/users");
 const jwt = require("express-jwt");
 const jwks = require("jwks-rsa");
 const mongoose = require("mongoose");
@@ -38,6 +39,7 @@ app.use("/", favouritesRoute);
 app.use("/", readRoute);
 app.use("/", currentReadingRoute);
 app.use("/", RecommendedRoute);
+app.use("/", UserRoute);
 
 app.get("/", (req, res) => {
   console.log("welcome to my api");

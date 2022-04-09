@@ -1,13 +1,14 @@
 @import "../../abstracts/partials/mixins.scss";
 
 .favouritebook {
+  margin: 0 2.5rem 1.25rem 1.25rem;
   border-radius: 12px;
   display: column;
   align-items: center;
   justify-content: center;
 
   margin-bottom: 20px;
-  column-gap: 1.25rem;
+  column-gap: 3.25rem;
   width: 100%;
   @include tablet {
     display: flex;
