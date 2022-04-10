@@ -102,7 +102,8 @@ const CurrentlyReading = () => {
   };
 
   //create a new comment
-  const createComment = () => {
+  const createComment = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:5150/createUser", {
         username: user.name,
@@ -175,19 +176,21 @@ const CurrentlyReading = () => {
           sx={{ width: 56, height: 56 }}
           src={user.picture}
         ></Avatar>
-        <label>
-          <h3>Comment</h3>
-        </label>
-        <textarea
-          className="comment__comment"
-          type="text"
-          placeholder="comment..."
-          onChange={(event) => setComment(event.target.value)}
-          required
-        ></textarea>
-        <Button variant="contained" onClick={createComment}>
-          Add comment
-        </Button>
+        <form className="comment__form" onSubmit={createComment}>
+          <label>
+            <h3>Comment</h3>
+          </label>
+          <textarea
+            className="comment__comment"
+            type="text"
+            placeholder="comment..."
+            onChange={(event) => setComment(event.target.value)}
+            required
+          ></textarea>
+          <Button className="comment__button" variant="contained" type="submit">
+            Add comment
+          </Button>
+        </form>
       </div>
       {users.map((user, index) => {
         return (

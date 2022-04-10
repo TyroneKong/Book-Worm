@@ -33,7 +33,7 @@ const Header = () => {
                   <Link to="/bookstore">Book Store</Link>
                 </li>
                 <li>
-                  <Link to="/bookchat">Book Chat</Link>
+                  <Link to="/bookchat">Book Chat coming soon</Link>
                 </li>
               </ul>
             </div>
