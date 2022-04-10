@@ -26,10 +26,10 @@ A book managing app, which allows users to discover new books/authors and manage
 
 ## How to install
 
-1.Download repo and cd into API folder and run npm i and run node server.js.
-2. cd into my-vite-app folder and run npm i react-router-dom@5.3 @react-google-maps/api.
-3. Then npm run dev.
-4. Once both server and client are running you will be directed to the Bookworm hompage.
+* Download repo and cd into API folder and run npm i and run node server.js.
+*  cd into my-vite-app folder and run npm i react-router-dom@5.3 @react-google-maps/api.
+* Then npm run dev.
+* Once both server and client are running you will be directed to the Bookworm hompage.
 
 
 
