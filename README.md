@@ -32,7 +32,7 @@ A book managing app, which allows users to discover new books, author and manage
 
 
 
-PORT used for authentication should be 3000
+PORT used for authentication and client should be 3000
 Server PORT is 5150
 
 
