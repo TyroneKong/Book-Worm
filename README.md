@@ -1,4 +1,4 @@
-# Book-Worm
+# Book Worm
 
 A book managing app, which allows users to discover new books/authors and manage existing books. 
 ## Table of contents
