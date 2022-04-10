@@ -1,6 +1,6 @@
 # Book-Worm
 
-A book managing app, which allows users to discover new books, author and manage existing books.
+A book managing app, which allows users to discover new books/authors and manage existing books. WIll be adding a chat feature using socketIo and integrating find places using google maps.
 
 ## Table of contents
 
