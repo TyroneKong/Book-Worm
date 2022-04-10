@@ -38,7 +38,7 @@ PORT used for authentication and client should be 3000
 Server PORT is 5150
 
 ## Next Steps
-* Will be adding google places to map to allow users locate nearest bookstore
+* Will be adding google places to map to allow users to locate nearest bookstore
 * Will be adding chat feature to allow users who are logged in to chat with each other to discuss books.
 
 
