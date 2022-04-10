@@ -23,6 +23,7 @@ const CurrentlyReading = () => {
     getAllComments();
   }, []);
 
+  //get all books data
   const getAllBooks = () => {
     axios.get("http://localhost:5150/currentlyReading").then((response) => {
       setData(response.data);
@@ -30,6 +31,7 @@ const CurrentlyReading = () => {
     });
   };
 
+  //get newyorktimes data
   const getNewYorkTimes = () => {
     axios.get("http://localhost:5150/newYorkTimesBooks").then((response) => {
       const book = response.data.results.books;
@@ -92,13 +94,14 @@ const CurrentlyReading = () => {
         });
     }
   };
-
+  //get all comments
   const getAllComments = () => {
     axios.get("http://localhost:5150/getUsers").then((response) => {
       setUsers(response.data);
     });
   };
 
+  //create a new comment
   const createComment = () => {
     axios
       .post("http://localhost:5150/createUser", {
@@ -110,6 +113,8 @@ const CurrentlyReading = () => {
       });
   };
 
+  //remove a comment
+
   const deleteComment = (id) => {
     axios
       .delete(`http://localhost:5150/deleteComment/${id}`)
@@ -118,6 +123,8 @@ const CurrentlyReading = () => {
         getAllComments();
       });
   };
+
+  //update a comment
 
   const updatedComment = (id) => {
     const updatecomment = {
@@ -132,6 +139,10 @@ const CurrentlyReading = () => {
       .then((response) => {
         alert("comment updated");
         getAllComments();
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Please fill in comment section before clicking edit");
       });
   };
 
@@ -163,7 +174,7 @@ const CurrentlyReading = () => {
           className="comment__profilepic"
           sx={{ width: 56, height: 56 }}
           src={user.picture}
-        ></Avatar>{" "}
+        ></Avatar>
         <label>
           <h3>Comment</h3>
         </label>

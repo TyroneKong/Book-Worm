@@ -8,6 +8,7 @@
     "jwks-rsa": "^2.0.5",
     "mongoose": "^6.2.9",
     "morgan": "^1.10.0",
-    "react-router-dom": "5.3"
+    "react-router-dom": "5.3",
+    "socket.io": "^4.4.1"
   }
 }

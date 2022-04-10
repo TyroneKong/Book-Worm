@@ -32,6 +32,9 @@ const Header = () => {
                 <li>
                   <Link to="/bookstore">Book Store</Link>
                 </li>
+                <li>
+                  <Link to="/bookchat">Book Chat</Link>
+                </li>
               </ul>
             </div>
           </nav>

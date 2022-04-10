@@ -66,7 +66,7 @@ const Book = () => {
         ? data.volumeInfo.categories
         : console.log("no categories available"),
     };
-    console.log(bookInfo);
+
     axios.get("http://localhost:5150/favourites").then((response) => {
       const allFavourites = response.data;
       const allIDs = allFavourites.map((book) => book.id);
@@ -75,7 +75,7 @@ const Book = () => {
         setAlertAlreadyAdded(true);
       } else {
         setAlertSuccess(true);
-        // alert("Book has now been added to favourites");
+
         axios
           .post(`http://localhost:5150/add-to-favourites`, bookInfo)
           .then((response) => {

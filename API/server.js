@@ -8,11 +8,41 @@ const readRoute = require("./routes/read");
 const currentReadingRoute = require("./routes/currentlyReading");
 const RecommendedRoute = require("./routes/recommended");
 const UserRoute = require("./routes/users");
-const jwt = require("express-jwt");
-const jwks = require("jwks-rsa");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 require("dotenv").config();
+const socketIo = require("socket.io");
+const http = require("http");
+
+const server = http.createServer(app);
+
+const io = socketIo(server, {
+  cors: {
+    origin: "http://localhost:3001",
+    methods: ["GET", "POST"],
+  },
+});
+
+// this is invoked when the client is connected
+io.on("connection", (socket) => {
+  console.log("client connected", socket.id);
+
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room:${data} `);
+  });
+
+  //listening for the send message event
+
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+    console.log(data);
+  });
+
+  socket.on("disconnect", () => {
+    socket.emit("User disconnected", socket.id);
+  });
+});
 
 /*ATLAS_URI = mongodb+srv://tyrone:ydRdjzmP65JsnLua@cluster0.nputt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 DBPASSWORD = ydRdjzmP65JsnLua */
@@ -51,7 +81,7 @@ app.post("/", (req, res) => {
   res.send("Thanks for posting");
 });
 
-app.listen(PORT, (err) => {
+server.listen(PORT, (err) => {
   if (err) {
     console.log(err);
   }
