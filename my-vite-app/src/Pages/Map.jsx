@@ -112,7 +112,7 @@ const MapContainer = () => {
   // };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAW_5DlbboF57eaWm70iBrvPpkTAMXq7r4">
+    <LoadScript googleMapsApiKey="">
       <div>
         <h1>Find the nearest bookstore</h1>
       </div>
