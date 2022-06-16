@@ -27,8 +27,10 @@
     }
   }
   &__image {
+    box-shadow: rgba(0, 0, 0, 0.75) 0rem 0.3125rem 0.9375rem;
+
     border-radius: 12px;
-    height: 12.5rem;
+    height: 17.5rem;
     &:hover {
       transform: scale(1.1);
     }

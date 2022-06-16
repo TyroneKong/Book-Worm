@@ -106,7 +106,7 @@ const CurrentlyReading = () => {
     e.preventDefault();
     axios
       .post("http://localhost:5150/createUser", {
-        username: user.name,
+        // username: user.name,
         comment: comment,
       })
       .then((response) => {
@@ -174,7 +174,7 @@ const CurrentlyReading = () => {
         <Avatar
           className="comment__profilepic"
           sx={{ width: 56, height: 56 }}
-          src={user.picture}
+          src={user?.picture}
         ></Avatar>
         <form className="comment__form" onSubmit={createComment}>
           <label>

@@ -11,36 +11,28 @@ const Header = () => {
   const [numOfRead, setNumOfRead] = useState([]);
 
   return (
-    isAuthenticated && (
-      <>
-        <header className="header">
-          <nav className="nav">
-            <div className="nav__links-container">
-              <ul className="nav__links">
-                <li>
-                  <Link to="/home">Home</Link>
-                </li>
-                <li>
-                  <Link to="/favourites">Favourites {numOfFav}</Link>
-                </li>
-                <li>
-                  <Link to="/currentlyReading">Reading now {numOfReadNow}</Link>
-                </li>
-                <li>
-                  <Link to="/read">Books I have read {numOfRead}</Link>
-                </li>
-                <li>
-                  <Link to="/bookstore">Book Store</Link>
-                </li>
-                <li>
-                  <Link to="/bookchat">Book Chat coming soon</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-      </>
-    )
+    <>
+      <header className="header">
+        <nav className="nav">
+          <div className="nav__links-container">
+            <ul className="nav__links">
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="/favourites">Favourites {numOfFav}</Link>
+              </li>
+              <li>
+                <Link to="/currentlyReading">Reading now {numOfReadNow}</Link>
+              </li>
+              <li>
+                <Link to="/read">Books I have read {numOfRead}</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </>
   );
 };
 export default Header;

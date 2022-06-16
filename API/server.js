@@ -47,12 +47,10 @@ io.on("connection", (socket) => {
 /*ATLAS_URI = mongodb+srv://tyrone:ydRdjzmP65JsnLua@cluster0.nputt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 DBPASSWORD = ydRdjzmP65JsnLua */
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
-
-const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MongoDB database connection successfull");
+const uri =
+  "mongodb+srv://tyrone:ydRdjzmP65JsnLua@cluster0.nputt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(uri).then(() => {
+  console.log("Mongo db connection successful");
 });
 
 app.use(morgan("dev"));

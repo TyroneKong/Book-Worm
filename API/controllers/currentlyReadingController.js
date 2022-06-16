@@ -10,36 +10,19 @@ exports.getCurrentlyReading = (req, res) => {
 };
 
 //add to currently reading  list
-exports.addToCurrentlyReading = (req, res) => {
-  const id = req.body.id;
-  const title = req.body.title;
-  const author = req.body.author;
-  const rating = req.body.rating;
-  const image = req.body.image;
-  const previewLink = req.body.previewLink;
-  const description = req.body.description;
-  const category = req.body.category;
-
-  const newCurrentlyReading = new CurrentlyReading({
-    id,
-    title,
-    author,
-    rating,
-    image,
-    previewLink,
-    description,
-    category,
-  });
-
-  newCurrentlyReading
-    .save()
-    .then(() => res.json("sucessfully added to want to read"))
-    .catch((err) => {
-      res.status(400).json(err);
-      console.log(err);
+exports.addToCurrentlyReading = async (req, res) => {
+  try {
+    const newCurrentlyReading = await CurrentlyReading.create(req.body);
+    res.status(200).json({
+      status: "success",
+      data: {
+        newCurrentlyReading,
+      },
     });
+  } catch (error) {
+    res.status(400).json(error);
+  }
 };
-
 //delete from currently reading list
 
 exports.deleteFromCurrentlyReading = (req, res) => {

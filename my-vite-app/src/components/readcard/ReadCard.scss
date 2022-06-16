@@ -1,13 +1,10 @@
 @import "../../abstracts/partials/mixins.scss";
 
 .readbook {
-  border: 2px solid grey;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  column-gap: 1.25rem;
   @include tablet {
     display: flex;
     flex-direction: row;
@@ -27,9 +24,11 @@
     }
   }
   &__image {
+    box-shadow: rgba(0, 0, 0, 0.75) 0rem 0.3125rem 0.9375rem;
+
     margin-top: 10px;
     border-radius: 0.75rem;
-    height: 8.25rem;
+    height: 12.25rem;
     &:hover {
       transform: scale(1.5);
     }

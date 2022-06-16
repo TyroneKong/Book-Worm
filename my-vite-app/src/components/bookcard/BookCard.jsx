@@ -16,16 +16,14 @@ const BookCard = ({ books, addToFavourites }) => {
         />
       </a>
       <div className="book__button-container">
-        {isAuthenticated && (
-          <Fab
-            fontSize="small"
-            className="book__button-favourite"
-            onClick={() => addToFavourites(books)}
-            variant="contained"
-          >
-            <FavoriteIcon />
-          </Fab>
-        )}
+        <Fab
+          fontSize="small"
+          className="book__button-favourite"
+          onClick={() => addToFavourites(books)}
+          variant="contained"
+        >
+          <FavoriteIcon />
+        </Fab>
       </div>
       <p>{books.volumeInfo.publishedDate}</p>
       <Rating value={books.volumeInfo.averageRating}></Rating>
