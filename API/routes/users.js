@@ -2,7 +2,7 @@ const express = require("express");
 const User = require("../models/users.model");
 const router = express.Router();
 
-const getUsers = (req, res) => {
+const getComments = (req, res) => {
   User.find({})
     .then((user) => {
       res.json(user);
@@ -12,11 +12,11 @@ const getUsers = (req, res) => {
     });
 };
 
-const createUser = (req, res) => {
-  const user = req.body;
-  const newUser = new User(user);
+const createComment = (req, res) => {
+  const comment = req.body;
+  const newUser = new User(comment);
   newUser.save();
-  res.json(user);
+  res.json(comment);
 };
 
 const deleteComment = (req, res) => {
@@ -45,8 +45,8 @@ const updateComment = (req, res) => {
   );
 };
 
-router.get("/getUsers", getUsers);
-router.post("/createUser", createUser);
+router.get("/getComments", getComments);
+router.post("/createComment", createComment);
 router.delete("/deleteComment/:id", deleteComment);
 router.patch("/updateComment/:id/:comment", updateComment);
 

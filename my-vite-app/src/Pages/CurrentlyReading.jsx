@@ -96,7 +96,7 @@ const CurrentlyReading = () => {
   };
   //get all comments
   const getAllComments = () => {
-    axios.get("http://localhost:5150/getUsers").then((response) => {
+    axios.get("http://localhost:5150/getComments").then((response) => {
       setUsers(response.data);
     });
   };
@@ -105,7 +105,7 @@ const CurrentlyReading = () => {
   const createComment = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5150/createUser", {
+      .post("http://localhost:5150/createComment", {
         // username: user.name,
         comment: comment,
       })
@@ -117,12 +117,17 @@ const CurrentlyReading = () => {
   //remove a comment
 
   const deleteComment = (id) => {
-    axios
-      .delete(`http://localhost:5150/deleteComment/${id}`)
-      .then((response) => {
-        console.log(response.data);
-        getAllComments();
-      });
+    const ok = confirm("Are you sure you want to delete this comment?");
+    if (!ok) {
+      return null;
+    } else {
+      axios
+        .delete(`http://localhost:5150/deleteComment/${id}`)
+        .then((response) => {
+          console.log(response.data);
+          getAllComments();
+        });
+    }
   };
 
   //update a comment

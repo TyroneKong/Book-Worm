@@ -31,39 +31,41 @@ const Reads = () => {
   };
 
   // add to currently reading list
-  const addToReads = (data) => {
-    console.log(data);
-    const bookInfo = {
-      id: data.id,
-      title: data.title,
-      author: data.author,
-      image: data.image,
-      previewlink: data.previewLink,
-      description: data.description
-        ? data.description
-        : console.log("No description found"),
-      category: data.category
-        ? data.category
-        : console.log("no categories available"),
-    };
+  // const addToReads = (data) => {
+  //   console.log(data);
+  //   const bookInfo = {
+  //     id: data.id,
+  //     title: data.title,
+  //     author: data.author,
+  //     image: data.image,
+  //     previewlink: data.previewLink,
+  //     description: data.description
+  //       ? data.description
+  //       : console.log("No description found"),
+  //     category: data.category
+  //       ? data.category
+  //       : console.log("no categories available"),
+  //   };
+  //   const ok = confirm("This book will now be added to your read list");
+  //   if (ok) {
+  //     axios.get("http://localhost:5150/read").then((response) => {
+  //       const allIDs = response.data.map((book) => book.id);
 
-    axios.get("http://localhost:5150/read").then((response) => {
-      const allIDs = response.data.map((book) => book.id);
-
-      //checks to see if book already exists in currently reading
-      if (allIDs.includes(data.id)) {
-        alert("You have already added this book in your list");
-      } else {
-        axios
-          .post(`http://localhost:5150/read`, bookInfo)
-          .then((response) => {})
-          .catch((err) => {
-            console.log(err);
-          });
-        alert("You have now added this book to reads list");
-      }
-    });
-  };
+  //       //checks to see if book already exists in currently reading
+  //       if (allIDs.includes(data.id)) {
+  //         alert("You have already added this book in your list");
+  //       } else {
+  //         axios
+  //           .post(`http://localhost:5150/read`, bookInfo)
+  //           .then((response) => {})
+  //           .catch((err) => {
+  //             console.log(err);
+  //           });
+  //         alert("You have now added this book to reads list");
+  //       }
+  //     });
+  //   }
+  // };
 
   // delete from favourites
   const removeFromReads = (data) => {

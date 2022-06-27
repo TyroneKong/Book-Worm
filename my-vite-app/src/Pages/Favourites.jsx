@@ -39,23 +39,27 @@ const Favourites = () => {
         ? data.category
         : console.log("no categories available"),
     };
+    const ok = confirm(
+      "This book will be added to your currently reading list?"
+    );
+    if (ok) {
+      axios.get("http://localhost:5150/currentlyReading").then((response) => {
+        const allIDs = response.data.map((book) => book.id);
 
-    axios.get("http://localhost:5150/currentlyReading").then((response) => {
-      const allIDs = response.data.map((book) => book.id);
-
-      //checks to see if book already exists in currently reading
-      if (allIDs.includes(data.id)) {
-        setAlertAlreadyAdded(true);
-      } else {
-        axios
-          .post(`http://localhost:5150/currentlyReading`, bookInfo)
-          .then((response) => {})
-          .catch((err) => {
-            console.log(err);
-          });
-        setAlertSuccess(true);
-      }
-    });
+        //checks to see if book already exists in currently reading
+        if (allIDs.includes(data.id)) {
+          setAlertAlreadyAdded(true);
+        } else {
+          axios
+            .post(`http://localhost:5150/currentlyReading`, bookInfo)
+            .then((response) => {})
+            .catch((err) => {
+              console.log(err);
+            });
+          setAlertSuccess(true);
+        }
+      });
+    }
   };
 
   // delete from favourites
